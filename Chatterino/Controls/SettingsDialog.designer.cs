@@ -66,6 +66,8 @@
             this.spAppearance = new Chatterino.Controls.SettingsTabPage();
             this.spConnection = new Chatterino.Controls.SettingsTabPage();
             this.spHighlighted = new Chatterino.Controls.SettingsTabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rtbIgnoredUsernames = new System.Windows.Forms.RichTextBox();
             this.tabs.SuspendLayout();
             this.RightPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,8 +86,8 @@
             this.tabs.Location = new System.Drawing.Point(0, 0);
             this.tabs.Name = "tabs";
             this.tabs.Panel = this.RightPanel;
-            this.tabs.SelectedIndex = 0;
-            this.tabs.SelectedTab = this.spAppearance;
+            this.tabs.SelectedIndex = 2;
+            this.tabs.SelectedTab = this.spHighlighted;
             this.tabs.Size = new System.Drawing.Size(598, 448);
             this.tabs.TabIndex = 0;
             this.tabs.TabsWidth = 150;
@@ -96,9 +98,9 @@
             this.RightPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RightPanel.Controls.Add(this.panel1);
-            this.RightPanel.Controls.Add(this.panel2);
             this.RightPanel.Controls.Add(this.panel3);
+            this.RightPanel.Controls.Add(this.panel2);
+            this.RightPanel.Controls.Add(this.panel1);
             this.RightPanel.Location = new System.Drawing.Point(150, 0);
             this.RightPanel.Name = "RightPanel";
             this.RightPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 42);
@@ -409,7 +411,9 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.rtbIgnoredUsernames);
             this.panel3.Controls.Add(this.rtbHighlights);
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.chkFlashTaskbar);
             this.panel3.Controls.Add(this.chkHighlight);
@@ -424,7 +428,7 @@
             // 
             this.rtbHighlights.Location = new System.Drawing.Point(21, 123);
             this.rtbHighlights.Name = "rtbHighlights";
-            this.rtbHighlights.Size = new System.Drawing.Size(404, 271);
+            this.rtbHighlights.Size = new System.Drawing.Size(404, 113);
             this.rtbHighlights.TabIndex = 17;
             this.rtbHighlights.Text = "";
             // 
@@ -479,6 +483,7 @@
             this.spAppearance.Location = new System.Drawing.Point(0, 0);
             this.spAppearance.Name = "spAppearance";
             this.spAppearance.Panel = this.panel1;
+            this.spAppearance.Selected = false;
             this.spAppearance.Size = new System.Drawing.Size(150, 30);
             this.spAppearance.TabIndex = 1;
             this.spAppearance.Text = "Appearance";
@@ -502,10 +507,28 @@
             this.spHighlighted.Location = new System.Drawing.Point(0, 60);
             this.spHighlighted.Name = "spHighlighted";
             this.spHighlighted.Panel = this.panel3;
-            this.spHighlighted.Selected = false;
             this.spHighlighted.Size = new System.Drawing.Size(150, 30);
             this.spHighlighted.TabIndex = 3;
             this.spHighlighted.Text = "Highlighting";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label5.Location = new System.Drawing.Point(18, 249);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(203, 17);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Ignored usernames (one per line)";
+            // 
+            // rtbIgnoredUsernames
+            // 
+            this.rtbIgnoredUsernames.Location = new System.Drawing.Point(21, 275);
+            this.rtbIgnoredUsernames.Name = "rtbIgnoredUsernames";
+            this.rtbIgnoredUsernames.Size = new System.Drawing.Size(404, 113);
+            this.rtbIgnoredUsernames.TabIndex = 17;
+            this.rtbIgnoredUsernames.Text = "";
             // 
             // SettingsDialog
             // 
@@ -574,5 +597,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMsgLimit;
         private System.Windows.Forms.CheckBox chkHideInput;
+        private System.Windows.Forms.RichTextBox rtbIgnoredUsernames;
+        private System.Windows.Forms.Label label5;
     }
 }
